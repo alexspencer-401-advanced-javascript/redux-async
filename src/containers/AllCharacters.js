@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Characters from '../components/character/Characters';
-import { fetchCharacters } from '../actions/characterActions';
+import { getCharacterPromise } from '../actions/characterActions';
 import { getCharacters, getCharactersLoading } from '../selectors/charactersSelectors';
 
 function AllCharacters({ characters, loading, fetchCharacters }) {
@@ -34,7 +34,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchCharacters() {
-    dispatch(fetchCharacters());
+    dispatch(getCharacterPromise());
   }
 });
 
