@@ -29,3 +29,10 @@ export const fetchCharacters = () => dispatch => {
     });
 };
 
+export const getCharacterPromise = () => ({
+  type: FETCH_CHARACTERS,
+  pendingType: FETCH_CHARACTERS_LOADING,
+  fulfilledType: FETCH_CHARACTERS_DONE,
+  payload: getAvatarCharacters()
+});
+
