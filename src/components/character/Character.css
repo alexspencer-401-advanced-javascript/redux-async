@@ -1,0 +1,9 @@
+.Character {
+  img {
+    width: 350px;
+    margin: 15px 15px;
+  }
+  p {
+    text-align: center;
+  }
+}
