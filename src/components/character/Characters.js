@@ -1,6 +1,7 @@
 import React from 'react';
 import Character from './Character';
 import PropTypes from 'prop-types';
+import styles from './Characters.css'
 
 const Characters = ({ characters }) => {
   const characterElements = characters.map((character, i) => {
@@ -12,14 +13,17 @@ const Characters = ({ characters }) => {
   });
 
   return (
-    <ul>
+    <ul className={styles.Characters}>
       {characterElements}
     </ul>
   );
 };
 
 Characters.propTypes = {
-  characters: PropTypes.array.isRequired
+  characters: PropTypes.arrayOf(PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired  
+  })).isRequired
 };
 
 export default Characters;
